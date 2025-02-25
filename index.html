@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML</title>
+  </head>
+  <body>
+    <label>Choose a movie genre:</label>
+    <select id="movieSelect">
+      <option value="Action">Action</option>
+      <option value="Drama">Drama</option>
+      <option value="Comedy">Comedy</option>
+    </select>
+
+    <p id="movieResult"></p>
+
+
+    <label for="weatherSelect">Selact a weather condition:</label>
+    <select id="weatherSelect">
+      <option value="Sunny">Sunny</option>
+      <option value="Rainy">Rainy</option>
+      <option value="Snowy">Snowy</option>
+    </select>
+
+    <p id="weatherResult"></p>
+
+
+
+    <label for="languageSelect">Select a language:</label>
+    <select id="languageSelect">
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+    </select>
+    <button onclick="displayGreeting()">Display Greeting</button>
+    <p id="greetingDisplay"></p>
+
+
+
+    <label for="instrumentSelect">Choose a musical instrument:</label>
+    <select id="instrumentSelect">
+        <option value="piano">Piano</option>
+        <option value="guiter">Guitar</option>
+        <option value="violin">Violin</option>
+    </select>
+    <button onclick="displayFunFact()">Display Fun Fact</button>
+    <p id="funFactDisplay"></p>
+
+
+    <label for="petSelect">Select a pet:</label>
+    <select id="petSelect">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="fish">Fish</option>
+    </select>
+    <button onclick="displayPet()">Display Pet Discription</button>
+    <p id="petDisplay"></p>
+
+  
+  
+
+
+    <script>
+
+const movieSelect = document.getElementById("movieSelect");
+  const movieResult = document.getElementById("movieResult");
+
+  movieSelect.addEventListener("change", function () {
+    const selectedMovie = movieSelect.value;
+    const movies = {
+      Comedy: "Superbad",
+      Action: "The Dark Knight",
+      Drama: "The Shawshank Redemption"
+    };
+    movieResult.textContent = `Recommended Comedy Movie: ${movies[selectedMovie]}`;
+  })
+
+
+
+  const weatherSelect = document.getElementById("weatherSelect");
+  const weatherResult = document.getElementById("weatherResult");
+
+  weatherSelect.addEventListener("change", function () {
+    const selectedWeather = weatherSelect.value;
+    const weather = {
+      Sunny: "Picnic in the park",
+      Rainy: "Movie day indoors",
+      Drama: "Build a snowman"
+    };
+    weatherResult.textContent = `Activity Suggestion: ${weather[selectedWeather]}`;
+  })
+
+
+
+  function displayGreeting() {
+           
+            const language = document.getElementById("languageSelect").value;
+            let greeting = "";
+
+           
+            if (language === "english") {
+                greeting = "Common Greeting: Hello!";
+            } else if (language === "spanish") {
+                greeting = "Common Greeting: Hola!";
+            } else if (language === "french") {
+                greeting = "Common Greeting: Bonjour!";
+            } else {
+                greeting = "Please select a language.";
+            }
+          document.getElementById("greetingDisplay").innerText = greeting;
+        }
+
+
+
+  function displayFunFact() {
+           
+           const instrument = document.getElementById("instrumentSelect").value;
+           let funFact = "";
+
+          
+           if (instrument === "piano") {
+               funFact = "Fun Fact: The piano has 88 keys.  "
+           } else if (instrument === "guiter") {
+               funFact = "Fun Fact: The guiter is one of the most popular instrument in the world."
+           } else if (instrument === "violin") {
+               funFact = "Fun Fact: The violin is a string instrument known for it's sweet sound."
+           } else {
+               funFact = "Please select a instrument.";
+           }
+
+          
+           document.getElementById("funFactDisplay").innerText = funFact;
+       }
+
+
+       function displayPet() {
+           
+           const pet = document.getElementById("petSelect").value;
+           let discription = "";
+
+          
+           if (pet === "dog") {
+            discription = "Pet Discription: Dogs are loyal and friendly companions.  "
+           } else if (pet === "cat") {
+            discription = "Pet Discription: Cat are independent and playful."
+           } else if (pet === "fish") {
+            discription = "Pet Discription: Fish are low-maintenance and peaceful pets."
+           } else {
+            discription = "Please select a pet.";
+           }
+
+          
+           document.getElementById("petDisplay").innerText = discription
+       }
+
+</script>
+  </body>
+</html>
